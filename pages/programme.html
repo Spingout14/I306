@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programme - RAP-Z FESTIVAL 2026</title>
+    
+    <link rel="stylesheet" href="../css/style.css">
+
+    <style>
+        /* Sélecteur de Jours (Onglets) */
+        .days-selector {
+            margin: 30px 0;
+            display: flex;
+            gap: 15px;
+        }
+
+        .day-btn {
+            padding: 12px 25px;
+            border: 2px solid var(--primary-color);
+            background-color: white;
+            color: var(--primary-color);
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .day-btn.active, .day-btn:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        /* Sections des Scènes */
+        .scene-section {
+            margin-bottom: 40px;
+            border: 1px solid var(--border-color);
+        }
+
+        .scene-header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 12px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .scene-header h3 {
+            margin: 0;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+        }
+
+        .scene-info {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        /* Tableau / Liste des Concerts */
+        .program-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .program-row {
+            border-bottom: 1px solid var(--border-color);
+            transition: background-color 0.2s;
+        }
+
+        .program-row:last-child {
+            border-bottom: none;
+        }
+
+        .program-row:hover {
+            background-color: var(--bg-light);
+        }
+
+        .time-cell {
+            padding: 15px 20px;
+            font-weight: bold;
+            width: 150px;
+            color: var(--primary-color);
+        }
+
+        .artist-cell {
+            padding: 15px 20px;
+        }
+
+        .artist-name {
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-bottom: 4px;
+        }
+
+        .artist-genre {
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        .action-container {
+            text-align: center;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>RAP-Z FESTIVAL</h1>
+        <nav>
+            <a href="../index.html">ACCUEIL</a>
+            <a href="#" class="active">PROGRAMME</a>
+            <a href="billetterie.html">BILLETTERIE</a>
+            <a href="paiement.html">INFOS</a>
+            <a href="#">FR / EN</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Programme</h2>
+
+        <div class="days-selector">
+            <button class="day-btn active">Samedi 23 sept.</button>
+            <button class="day-btn">Dimanche 24 sept.</button>
+        </div>
+
+        <section class="scene-section">
+            <div class="scene-header">
+                <h3>Scène Principale</h3>
+                <span class="scene-info">Plein air (tente de secours) • ~1'000 pers.</span>
+            </div>
+            <table class="program-table">
+                <tr class="program-row">
+                    <td class="time-cell">18:00 - 19:00</td>
+                    <td class="artist-cell">
+                        <div class="artist-name">[Nom de l'Artiste 1]</div>
+                        <div class="artist-genre">Tête d'affiche • Fusion Rap-Jazz</div>
+                    </td>
+                </tr>
+                <tr class="program-row">
+                    <td class="time-cell">20:00 - 21:30</td>
+                    <td class="artist-cell">
+                        <div class="artist-name">[Nom de l'Artiste 2]</div>
+                        <div class="artist-genre">Tête d'affiche • Rap-Jazz</div>
+                    </td>
+                </tr>
+                <tr class="program-row">
+                    <td class="time-cell">22:00 - 23:30</td>
+                    <td class="artist-cell">
+                        <div class="artist-name">[Nom de l'Artiste 3]</div>
+                        <div class="artist-genre">Closing • Rap</div>
+                    </td>
+                </tr>
+            </table>
+        </section>
+
+        <section class="scene-section">
+            <div class="scene-header">
+                <h3>Jazz Lounge</h3>
+                <span class="scene-info">Grand Hall intérieur • ~400 pers.</span>
+            </div>
+            <table class="program-table">
+                <tr class="program-row">
+                    <td class="time-cell">19:00 - 20:00</td>
+                    <td class="artist-cell">
+                        <div class="artist-name">[Artiste Jazz 1]</div>
+                        <div class="artist-genre">Trio • Jazz contemporain</div>
+                    </td>
+                </tr>
+                <tr class="program-row">
+                    <td class="time-cell">21:00 - 22:30</td>
+                    <td class="artist-cell">
+                        <div class="artist-name">[Artiste Jazz 2]</div>
+                        <div class="artist-genre">Quartet • Jazz-fusion</div>
+                    </td>
+                </tr>
+            </table>
+        </section>
+
+        <section class="scene-section">
+            <div class="scene-header">
+                <h3>Scène Découverte</h3>
+                <span class="scene-info">Salle modulable indoor • ~200 pers.</span>
+            </div>
+            <table class="program-table">
+                <tr class="program-row">
+                    <td class="time-cell">17:00 - 17:45</td>
+                    <td class="artist-cell">
+                        <div class="artist-name">[Nouveau Talent 1]</div>
+                        <div class="artist-genre">Émergent • Hip-hop</div>
+                    </td>
+                </tr>
+                <tr class="program-row">
+                    <td class="time-cell">18:30 - 19:15</td>
+                    <td class="artist-cell">
+                        <div class="artist-name">[Nouveau Talent 2]</div>
+                        <div class="artist-genre">Émergent • Rap-soul</div>
+                    </td>
+                </tr>
+                <tr class="program-row">
+                    <td class="time-cell">20:00 - 20:45</td>
+                    <td class="artist-cell">
+                        <div class="artist-name">[Nouveau Talent 3]</div>
+                        <div class="artist-genre">Émergent • Spoken word</div>
+                    </td>
+                </tr>
+            </table>
+        </section>
+
+        <div class="action-container">
+            <button class="btn-large">Voir tous les artistes</button>
+        </div>
+    </main>
+
+    <footer>
+        <div>
+            &copy; 2026 RAP-Z Festival • Organisé par Romandie Events Sàrl<br>
+            <small><a href="#">Mentions légales</a> • <a href="#">CGV</a> • <a href="#">Contact</a></small>
+        </div>
+        <div>
+            <a href="#">Instagram</a> | <a href="#">TikTok</a> | <a href="#">YouTube</a>
+        </div>
+    </footer>
+
+</body>
+</html>

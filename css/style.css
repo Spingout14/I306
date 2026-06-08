@@ -1,0 +1,93 @@
+/* Charte graphique globale - RAP-Z FESTIVAL 2026 */
+:root {
+    --primary-color: #d97724; /* Orange principal */
+    --bg-light: #fdf5ee;      /* Fond clair des blocs */
+    --bg-dark: #222222;       /* Fond du footer */
+    --text-color: #333333;
+    --border-color: #e2d6cc;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: var(--text-color);
+    background-color: #ffffff;
+}
+
+/* En-tête / Navigation commune */
+header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: bold;
+}
+
+nav a:hover, nav a.active {
+    text-decoration: underline;
+}
+
+/* Conteneur Principal de base */
+main {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+h2 {
+    color: var(--primary-color);
+    font-size: 2rem;
+    border-bottom: 3px solid var(--primary-color);
+    padding-bottom: 5px;
+    text-transform: uppercase;
+}
+
+/* Boutons globaux */
+.btn-large {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 15px 35px;
+    border: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background-color 0.2s;
+}
+
+.btn-large:hover {
+    background-color: #b85f19;
+}
+
+/* Pied de page commun */
+footer {
+    background-color: var(--bg-dark);
+    color: #999;
+    padding: 20px 30px;
+    margin-top: 60px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+}
+
+footer a {
+    color: #ccc;
+    text-decoration: none;
+    margin-right: 15px;
+}
