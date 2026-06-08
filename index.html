@@ -1,0 +1,81 @@
+<html>
+    <head>
+        <title>RAP-Z FESTIVAL</title>
+    </head>
+    <body>
+        <header>
+            <h1>RAP-Z FESTIVAL</h1>
+            <nav>
+            <a href="pages/programme.html">PROGRAMME</a>
+            <a href="artistes.html">ARTISTES</a>
+            <a href="index.html">FR /</a>
+            <a href="index-en.html">EN</a>
+            </nav>
+            
+        </header>
+        <div class="carte" id="carte">
+            <img src="images/Banniere_rapz.png" alt="Bannière RAP-Z FESTIVAL">
+
+        </div>
+    </body>
+    <style>
+        /* Charte graphique globale - RAP-Z FESTIVAL 2026 */
+        :root {
+            --primary-color: #d97724; /* Orange principal */
+            --bg-light: #fdf5ee;      /* Fond clair des blocs */
+            --bg-dark: #222222;       /* Fond du footer */
+            --text-color: #333333;
+            --border-color: #e2d6cc;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--text-color);
+            background-color: #ffffff;
+        }
+
+        /* En-tête / Navigation commune */
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 1.5rem;
+            letter-spacing: 1px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: bold;
+        }
+
+        nav a:hover, nav a.active {
+            text-decoration: underline;
+        }
+
+        h2 {
+            color: var(--primary-color);
+            font-size: 2rem;
+            border-bottom: 3px solid var(--primary-color);
+            padding-bottom: 5px;
+            text-transform: uppercase;
+        }
+        .carte{
+            width: 60%;
+            background-color: #FFDDC0;
+        }
+        .carte img{
+            width: 100%;
+        }
+    </style>
+</html>
