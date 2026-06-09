@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Billetterie - RAP-Z FESTIVAL 2026</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .ticket-container {
+            margin: 30px 0;
+            border: 1px solid var(--border-color);
+            background-color: #ffffff;
+        }
+
+        .ticket-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .ticket-item:last-child {
+            border-bottom: none;
+        }
+
+        .ticket-item:hover {
+            background-color: var(--bg-light);
+        }
+
+        .ticket-info {
+            flex-grow: 1;
+        }
+
+        .ticket-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--text-color);
+            margin-bottom: 5px;
+        }
+
+        .ticket-description {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .ticket-price {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            width: 120px;
+            text-align: right;
+            padding-right: 20px;
+        }
+
+        .quantity-selector {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .qty-btn {
+            background-color: white;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            font-weight: bold;
+            width: 35px;
+            height: 35px;
+            cursor: pointer;
+            transition: all 0.2s;
+            border-radius: 4px;
+        }
+
+        .qty-btn:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .qty-input {
+            width: 50px;
+            text-align: center;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border: 1px solid var(--border-color);
+            padding: 5px;
+            border-radius: 4px;
+        }
+
+        .qty-input::-webkit-outer-spin-button,
+        .qty-input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        .qty-input[type=number] {
+            -moz-appearance: textfield;
+        }
+
+        .summary-box {
+            background-color: var(--bg-light);
+            border: 2px dashed var(--primary-color);
+            padding: 20px;
+            margin-top: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .total-label {
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .total-amount {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .info-notice {
+            background-color: #f0f4f8;
+            border-left: 4px solid #2b6cb0;
+            padding: 15px;
+            margin-top: 25px;
+            font-size: 0.9rem;
+            color: #2d3748;
+        }
+
+        .action-container {
+            text-align: right;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>RAP-Z FESTIVAL</h1>
+        <nav>
+            <a href="../index.html">ACCUEIL</a>
+            <a href="programme.html">PROGRAMME</a>
+            <a href="#" class="active">BILLETTERIE</a>
+            <a href="paiement.html">INFOS</a>
+            <a href="#">FR / EN</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Billetterie</h2>
+        <p>Sélectionnez vos accès pour le festival RAP-Z Lausanne 2026. Les places sont limitées.</p>
+
+        <div class="ticket-container">
+            
+            <div class="ticket-item" data-price="85.00">
+                <div class="ticket-info">
+                    <div class="ticket-title">Pass Samedi</div>
+                    <div class="ticket-description">Accès complet aux 3 scènes pour la journée du samedi 23 septembre 2026.</div>
+                </div>
+                <div class="ticket-price">85.00 CHF</div>
+                <div class="quantity-selector">
+                    <button type="button" class="qty-btn btn-minus">-</button>
+                    <input type="number" class="qty-input" value="0" min="0">
+                    <button type="button" class="qty-btn btn-plus">+</button>
+                </div>
+            </div>
+
+            <div class="ticket-item" data-price="85.00">
+                <div class="ticket-info">
+                    <div class="ticket-title">Pass Dimanche</div>
+                    <div class="ticket-description">Accès complet aux 3 scènes pour la journée du dimanche 24 septembre 2026.</div>
+                </div>
+                <div class="ticket-price">85.00 CHF</div>
+                <div class="quantity-selector">
+                    <button type="button" class="qty-btn btn-minus">-</button>
+                    <input type="number" class="qty-input" value="0" min="0">
+                    <button type="button" class="qty-btn btn-plus">+</button>
+                </div>
+            </div>
+
+            <div class="ticket-item" data-price="150.00">
+                <div class="ticket-info">
+                    <div class="ticket-title">Pass Toutes Scènes (2 Jours)</div>
+                    <div class="ticket-description">Le pack complet pour ne rien manquer du week-end. Économisez sur le tarif journalier.</div>
+                </div>
+                <div class="ticket-price">150.00 CHF</div>
+                <div class="quantity-selector">
+                    <button type="button" class="qty-btn btn-minus">-</button>
+                    <input type="number" class="qty-input" value="0" min="0">
+                    <button type="button" class="qty-btn btn-plus">+</button>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="info-notice">
+            <strong>⚠️ Informations importantes d'accès :</strong> Un contrôle strict des identités sera effectué à l'entrée. Les mineurs doivent impérativement présenter une autorisation parentale écrite et signée pour accéder au site du festival.
+        </div>
+
+        <div class="summary-box">
+            <div>
+                <div class="total-label">Sous-total de votre commande</div>
+                <small style="color: #666;">Frais de traitement inclus</small>
+            </div>
+            <div class="total-amount" id="global-total">0.00 CHF</div>
+        </div>
+
+        <div class="action-container">
+            <button class="btn-large" onclick="window.location.href='paiement.html'">Passer au paiement &raquo;</button>
+        </div>
+    </main>
+
+    <footer>
+        <div>
+            &copy; 2026 RAP-Z Festival • Organisé par Romandie Events Sàrl<br>
+            <small><a href="#">Mentions légales</a> • <a href="#">CGV</a> • <a href="#">Contact</a></small>
+        </div>
+        <div>
+            <a href="#">Instagram</a> | <a href="#">TikTok</a> | <a href="#">YouTube</a>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelectorAll('.ticket-item').forEach(ticket => {
+            const btnMinus = ticket.querySelector('.btn-minus');
+            const btnPlus = ticket.querySelector('.btn-plus');
+            const input = ticket.querySelector('.qty-input');
+
+            btnMinus.addEventListener('click', () => {
+                let currentVal = parseInt(input.value) || 0;
+                if (currentVal > 0) {
+                    input.value = currentVal - 1;
+                    calculateTotal();
+                }
+            });
+
+            btnPlus.addEventListener('click', () => {
+                let currentVal = parseInt(input.value) || 0;
+                input.value = currentVal + 1;
+                calculateTotal();
+            });
+
+            input.addEventListener('input', () => {
+                let currentVal = parseInt(input.value);
+                if (currentVal < 0) {
+                    input.value = 0;
+                }
+                calculateTotal();
+            });
+
+            input.addEventListener('focus', () => {
+                if (input.value === "0") {
+                    input.value = "";
+                }
+            });
+
+            input.addEventListener('blur', () => {
+                if (input.value === "") {
+                    input.value = 0;
+                }
+                calculateTotal();
+            });
+        });
+
+        function calculateTotal() {
+            let total = 0;
+            document.querySelectorAll('.ticket-item').forEach(ticket => {
+                const qty = parseInt(ticket.querySelector('.qty-input').value) || 0;
+                const price = parseFloat(ticket.getAttribute('data-price'));
+                total += qty * price;
+            });
+            
+            document.getElementById('global-total').innerText = total.toFixed(2) + " CHF";
+        }
+    </script>
+
+</body>
+</html>
