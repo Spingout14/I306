@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmation & Billet - RAP-Z FESTIVAL 2026</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        main {
+            max-width: 800px;
+        }
+
+        .success-banner {
+            background-color: var(--bg-light);
+            border: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            gap: 22px;
+            padding: 22px 28px;
+            margin-bottom: 20px;
+        }
+
+        .success-circle {
+            width: 55px;
+            height: 55px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 1.5rem;
+            color: white;
+            animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+        }
+
+        @keyframes popIn {
+            0%   { transform: scale(0); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        .success-text h2 {
+            margin: 0 0 4px;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: none;
+            padding: 0;
+            display: block;
+        }
+
+        .success-text p {
+            margin: 0;
+            color: #555;
+            font-size: 0.95rem;
+        }
+
+        .order-info {
+            margin-bottom: 25px;
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        .order-info-top {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 5px;
+        }
+
+        .order-num {
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .order-info .auto-notice {
+            font-style: italic;
+            color: #888;
+            font-size: 0.85rem;
+        }
+
+        .section-title {
+            color: var(--primary-color);
+            text-transform: uppercase;
+            font-size: 1.1rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+            margin: 0 0 15px;
+        }
+
+        .tickets-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 28px;
+        }
+
+        .ticket {
+            display: flex;
+            border: 2px solid var(--primary-color);
+            background: white;
+            min-height: 155px;
+            animation: slideUp 0.4s ease both;
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(15px); opacity: 0; }
+            to   { transform: translateY(0);    opacity: 1; }
+        }
+
+        .ticket-label {
+            width: 32px;
+            background-color: var(--bg-dark);
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .ticket-label span {
+            color: white;
+            font-size: 0.6rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            writing-mode: vertical-rl;
+            transform: rotate(180deg);
+        }
+
+        .ticket-body {
+            flex: 1;
+            padding: 18px 22px;
+        }
+
+        .ticket-type {
+            font-size: 0.78rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 4px;
+        }
+
+        .ticket-date {
+            font-size: 1.35rem;
+            font-weight: 900;
+            color: #111;
+            margin-bottom: 3px;
+        }
+
+        .ticket-lieu {
+            font-size: 0.85rem;
+            color: #777;
+            margin-bottom: 12px;
+        }
+
+        .ticket-sep {
+            border: none;
+            border-top: 1px dashed #ccc;
+            margin: 10px 0;
+        }
+
+        .ticket-meta-label {
+            font-size: 0.68rem;
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 2px;
+        }
+
+        .ticket-meta-value {
+            font-size: 0.95rem;
+            font-weight: bold;
+            color: #222;
+            margin-bottom: 8px;
+        }
+
+        .ticket-meta-value.prix {
+            color: var(--primary-color);
+            margin-bottom: 0;
+        }
+
+        .ticket-qr {
+            width: 155px;
+            flex-shrink: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 15px;
+            background-color: #fafafa;
+            border-left: 1px dashed #ccc;
+        }
+
+        .ticket-qr img {
+            display: block;
+            width: 110px;
+            height: 110px;
+            object-fit: contain;
+        }
+
+        .ticket-qr-label {
+            font-size: 0.65rem;
+            color: #888;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .infos-box {
+            border: 1px solid var(--border-color);
+            border-left: 4px solid var(--primary-color);
+            background: var(--bg-light);
+            padding: 16px 22px;
+            margin-bottom: 28px;
+        }
+
+        .infos-box h3 {
+            color: var(--primary-color);
+            text-transform: uppercase;
+            font-size: 0.82rem;
+            letter-spacing: 1px;
+            margin: 0 0 10px;
+        }
+
+        .infos-box ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            font-size: 0.88rem;
+            color: #444;
+            line-height: 1.9;
+        }
+
+        .infos-box ul li::before {
+            content: '☐ ';
+            color: var(--primary-color);
+        }
+
+        .actions-bar {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 10px;
+        }
+
+        .btn-dark {
+            background-color: var(--bg-dark);
+            color: white;
+            padding: 13px 22px;
+            border: none;
+            font-weight: bold;
+            font-size: 0.88rem;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: background-color 0.2s;
+        }
+
+        .btn-dark:hover { background-color: #444; }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+            padding: 13px 22px;
+            font-weight: bold;
+            font-size: 0.88rem;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: background-color 0.2s;
+        }
+
+        .btn-outline:hover { background-color: var(--bg-light); }
+
+        @media print {
+            header, footer, .success-banner, .infos-box, .actions-bar { display: none !important; }
+            body { background: white; }
+            main { max-width: 100%; margin: 0; padding: 0; }
+            .ticket { border: 2px solid #000; page-break-inside: avoid; margin-bottom: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>RAP-Z FESTIVAL</h1>
+        <nav>
+            <a href="../index.html">ACCUEIL</a>
+            <a href="programme.html">PROGRAMME</a>
+            <a href="billetterie.html">BILLETTERIE</a>
+            <a href="#">FR / EN</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <div class="success-banner">
+            <div class="success-circle">✔</div>
+            <div class="success-text">
+                <h2>Paiement confirmé !</h2>
+                <p>Merci pour votre commande. Vos billets sont prêts.</p>
+            </div>
+        </div>
+
+        <div class="order-info">
+            <div class="order-info-top">
+                <span>Commande n°</span>
+                <span class="order-num" id="order-ref-number">#RAPZ-2026-000000</span>
+                <span>•</span>
+                <span id="order-date"></span>
+            </div>
+            <div>Email : <strong>[ votre email ]</strong></div>
+            <div class="auto-notice">Un email avec vos billets a été envoyé automatiquement</div>
+        </div>
+
+        <div class="section-title" id="billets-title">Vos billets (1)</div>
+
+        <div class="tickets-list" id="tickets-container"></div>
+
+        <div class="infos-box">
+            <h3>Informations pratiques</h3>
+            <ul>
+                <li>Présentez le QR code (papier ou mobile) à l'entrée du festival</li>
+                <li>Ouverture des portes : 16h00 le samedi, 15h00 le dimanche</li>
+                <li>Mineurs : autorisation parentale écrite obligatoire à l'entrée</li>
+                <li>Navette gratuite : gare CFF Lausanne ↔ Beaulieu, toutes les 20 minutes</li>
+            </ul>
+        </div>
+
+        <div class="actions-bar">
+            <button class="btn-dark" onclick="window.print()">☐ Télécharger (PDF)</button>
+            <button class="btn-outline">☐ Renvoyer par email</button>
+            <button class="btn-outline">☐ Ajouter au calendrier</button>
+        </div>
+
+    </main>
+
+    <footer>
+        <div>
+            © 2026 RAP-Z Festival • Organisé par Romandie Events Sàrl<br>
+            <small><a href="#">Mentions légales</a> • <a href="#">CGV</a> • <a href="#">Contact</a></small>
+        </div>
+        <div>
+            <a href="#">Instagram</a> | <a href="#">TikTok</a> | <a href="#">YouTube</a>
+        </div>
+    </footer>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const total  = params.get('total')  || '150';
+        const qty    = parseInt(params.get('qty') || '1');
+        const type   = params.get('type')   || 'Pass Journée Samedi';
+        const method = params.get('method') || 'TWINT';
+
+        const unitPrice = (parseFloat(total) / qty).toFixed(2);
+
+        const refNum = '#RAPZ-2026-' + Math.random().toString(36).substring(2, 8).toUpperCase();
+
+        const now = new Date();
+        const dateStr = now.toLocaleDateString('fr-CH', { day: '2-digit', month: 'long', year: 'numeric' });
+        const timeStr = now.toLocaleTimeString('fr-CH', { hour: '2-digit', minute: '2-digit' });
+
+        let festivalDate = '23 septembre 2026';
+        if (type.toLowerCase().includes('dimanche')) {
+            festivalDate = '24 septembre 2026';
+        } else if (type.toLowerCase().includes('2 jours') || type.toLowerCase().includes('toutes')) {
+            festivalDate = 'Sam. 23 & Dim. 24 sept. 2026';
+        }
+
+        document.getElementById('order-ref-number').textContent = refNum;
+        document.getElementById('order-date').textContent = dateStr + ' à ' + timeStr;
+        document.getElementById('billets-title').textContent = 'Vos billets (' + qty + ')';
+
+        const container = document.getElementById('tickets-container');
+        for (let i = 0; i < qty; i++) {
+            const porteur = i === 0 ? '[ Prénom Nom ]' : '[ Invité — nom à venir ]';
+            container.innerHTML += `
+                <div class="ticket">
+                    <div class="ticket-label">
+                        <span>Billet ${i + 1}/${qty}</span>
+                    </div>
+                    <div class="ticket-body">
+                        <div class="ticket-type">${type}</div>
+                        <div class="ticket-date">${festivalDate}</div>
+                        <div class="ticket-lieu">Accès aux 3 scènes • Beaulieu, Lausanne</div>
+                        <hr class="ticket-sep">
+                        <div class="ticket-meta-label">Porteur du billet</div>
+                        <div class="ticket-meta-value">${porteur}</div>
+                        <div class="ticket-meta-label">Prix</div>
+                        <div class="ticket-meta-value prix">${unitPrice}.– CHF</div>
+                    </div>
+                    <div class="ticket-qr">
+                        <img src="../images/qr_twint.png" alt="QR Code billet">
+                        <div class="ticket-qr-label">À présenter à l'entrée</div>
+                    </div>
+                </div>`;
+        }
+    </script>
+
+</body>
+</html>
